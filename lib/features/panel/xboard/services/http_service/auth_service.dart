@@ -8,7 +8,11 @@ class AuthService {
     return await _httpService.postRequest(
       "/api/v1/passport/auth/login",
       {"email": email, "password": password},
-      requiresHeaders: false,
+  requiresHeaders: true,
+  headers: {
+    "Content-Type": "application/json",
+    "Accept": "application/json",
+  },
     );
   }
 
